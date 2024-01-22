@@ -5,6 +5,7 @@ import { config } from "dotenv";
 import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/auth.routes.js";
+import messageRoutes from "./routes/message.routes.js";
 
 config();
 const app = express();
@@ -16,6 +17,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/chat", authRoutes);
+app.use("/chat", messageRoutes);
 
 
 
